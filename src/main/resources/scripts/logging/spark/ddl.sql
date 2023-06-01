@@ -4,6 +4,7 @@ CREATE
 CREATE
     TABLE
         IF NOT EXISTS ${catalog}.${database}.experiment_telemetry(
+            run_id STRING,
             event_start_time STRING,
             event_end_time STRING,
             event_id STRING,
