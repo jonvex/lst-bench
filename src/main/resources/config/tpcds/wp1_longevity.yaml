@@ -28,6 +28,9 @@ phases:
   sessions:
   - tasks:
     - template_id: build
+      replace_regex:
+      - pattern: '(?i)varchar\(.*\)|char\(.*\)'
+        replacement: 'string'
 - id: single_user_1
   sessions:
   - tasks:
@@ -35,8 +38,8 @@ phases:
 - id: data_maintenance_1
   sessions:
   - tasks:
-    - template_id: data_maintenance_delta
-    - template_id: data_maintenance_delta
+    - template_id: data_maintenance_hudi
+    - template_id: data_maintenance_hudi
 - id: single_user_2
   sessions:
   - tasks:
@@ -44,8 +47,8 @@ phases:
 - id: data_maintenance_2
   sessions:
   - tasks:
-    - template_id: data_maintenance_delta
-    - template_id: data_maintenance_delta
+    - template_id: data_maintenance_hudi
+    - template_id: data_maintenance_hudi
 - id: single_user_3
   sessions:
   - tasks:
@@ -53,8 +56,8 @@ phases:
 - id: data_maintenance_3
   sessions:
   - tasks:
-    - template_id: data_maintenance_delta
-    - template_id: data_maintenance_delta
+    - template_id: data_maintenance_hudi
+    - template_id: data_maintenance_hudi
 - id: single_user_4
   sessions:
   - tasks:
@@ -62,8 +65,8 @@ phases:
 - id: data_maintenance_4
   sessions:
   - tasks:
-    - template_id: data_maintenance_delta
-    - template_id: data_maintenance_delta
+    - template_id: data_maintenance_hudi
+    - template_id: data_maintenance_hudi
 - id: single_user_5
   sessions:
   - tasks:
@@ -71,8 +74,8 @@ phases:
 - id: data_maintenance_5
   sessions:
   - tasks:
-    - template_id: data_maintenance_delta
-    - template_id: data_maintenance_delta
+    - template_id: data_maintenance_hudi
+    - template_id: data_maintenance_hudi
 - id: single_user_6
   sessions:
   - tasks:
