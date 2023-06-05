@@ -25,4 +25,4 @@ parameter_values:
   table_format: hudi
   data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/hudi/sf_10/'
   options_suffix: ''
-  tblproperties_suffix: ',type="mor"'
+  table_props_suffix: ', type = "mor"'
