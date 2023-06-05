@@ -13,5 +13,5 @@ CREATE
             event_data STRING
         )
             USING csv OPTIONS(
-            PATH '${path}experiment/'
+            PATH '${data_path}experiment_telemetry/'
         );
