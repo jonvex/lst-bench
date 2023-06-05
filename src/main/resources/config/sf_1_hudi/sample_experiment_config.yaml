@@ -24,5 +24,5 @@ parameter_values:
   database: hudi_tpcds
   table_format: hudi
   data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/hudi/sf_1/'
-  options_suffix: ',type=\"mor\"'
-  tblproperties_suffix: ',type=\"mor\"'
+  options_suffix: ''
+  table_props_suffix: ', type = "mor"'
