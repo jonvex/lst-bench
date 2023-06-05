@@ -11,7 +11,7 @@ metadata:
   table_format: hudi
   table_format_version: 0.12.2
   scale_factor: 1
-  mode: cow
+  mode: mor
 # The following parameter values will be used to replace the variables in the workload statements.
 parameter_values:
   external_catalog: spark_catalog
@@ -25,4 +25,4 @@ parameter_values:
   table_format: hudi
   data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/hudi/sf_1/'
   options_suffix: ''
-  tblproperties_suffix: ''
+  tblproperties_suffix: ',type="mor"'
