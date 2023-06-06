@@ -8,6 +8,7 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.catalog_sales(
+            cs_sold_date_sk INT,
             cs_sold_time_sk INT,
             cs_ship_date_sk INT,
             cs_bill_customer_sk INT,
@@ -85,15 +86,11 @@ CREATE
             cs_net_profit DECIMAL(
                 7,
                 2
-            ),
-            cs_sold_date_sk INT
+            )
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}catalog_sales/" ${external_options_suffix}
-        ) PARTITIONED BY(cs_sold_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.catalog_sales RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
@@ -102,6 +99,7 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.catalog_returns(
+            cr_returned_date_sk INT,
             cr_returned_time_sk INT,
             cr_item_sk INT,
             cr_refunded_customer_sk INT,
@@ -154,15 +152,11 @@ CREATE
             cr_net_loss DECIMAL(
                 7,
                 2
-            ),
-            cr_returned_date_sk INT
+            )
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}catalog_returns/" ${external_options_suffix}
-        ) PARTITIONED BY(cr_returned_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.catalog_returns RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
@@ -171,17 +165,14 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.inventory(
+            inv_date_sk INT,
             inv_item_sk INT,
             inv_warehouse_sk INT,
-            inv_quantity_on_hand INT,
-            inv_date_sk INT
+            inv_quantity_on_hand INT
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}inventory/" ${external_options_suffix}
-        ) PARTITIONED BY(inv_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.inventory RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
@@ -190,6 +181,7 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.store_sales(
+            ss_sold_date_sk INT,
             ss_sold_time_sk INT,
             ss_item_sk INT,
             ss_customer_sk INT,
@@ -247,15 +239,11 @@ CREATE
             ss_net_profit DECIMAL(
                 7,
                 2
-            ),
-            ss_sold_date_sk INT
+            )
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}store_sales/" ${external_options_suffix}
-        ) PARTITIONED BY(ss_sold_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.store_sales RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
@@ -264,6 +252,7 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.store_returns(
+            sr_returned_date_sk INT,
             sr_return_time_sk INT,
             sr_item_sk INT,
             sr_customer_sk INT,
@@ -309,15 +298,11 @@ CREATE
             sr_net_loss DECIMAL(
                 7,
                 2
-            ),
-            sr_returned_date_sk INT
+            )
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}store_returns/" ${external_options_suffix}
-        ) PARTITIONED BY(sr_returned_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.store_returns RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
@@ -326,6 +311,7 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.web_sales(
+            ws_sold_date_sk INT,
             ws_sold_time_sk INT,
             ws_ship_date_sk INT,
             ws_item_sk INT,
@@ -403,15 +389,11 @@ CREATE
             ws_net_profit DECIMAL(
                 7,
                 2
-            ),
-            ws_sold_date_sk INT
+            )
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}web_sales/" ${external_options_suffix}
-        ) PARTITIONED BY(ws_sold_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.web_sales RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
@@ -420,6 +402,7 @@ DROP
 CREATE
     TABLE
         ${external_catalog}.${external_database}.web_returns(
+            wr_returned_date_sk INT,
             wr_returned_time_sk INT,
             wr_item_sk INT,
             wr_refunded_customer_sk INT,
@@ -469,15 +452,11 @@ CREATE
             wr_net_loss DECIMAL(
                 7,
                 2
-            ),
-            wr_returned_date_sk INT
+            )
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}web_returns/" ${external_options_suffix}
-        ) PARTITIONED BY(wr_returned_date_sk);
-
-ALTER TABLE
-    ${external_catalog}.${external_database}.web_returns RECOVER PARTITIONS;
+        );
 
 DROP
     TABLE
