@@ -1,6 +1,7 @@
 CREATE
     TABLE
         ${catalog}.${database}.web_returns(
+            wr_returned_date_sk INT,
             wr_returned_time_sk INT,
             wr_item_sk INT,
             wr_refunded_customer_sk INT,
@@ -50,8 +51,7 @@ CREATE
             wr_net_loss DECIMAL(
                 7,
                 2
-            ),
-            wr_returned_date_sk INT
+            )
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}${experiment_start_time}/${repetition}/web_returns/'

@@ -1,6 +1,7 @@
 CREATE
     TABLE
         ${catalog}.${database}.store_returns(
+            sr_returned_date_sk INT,
             sr_return_time_sk INT,
             sr_item_sk INT,
             sr_customer_sk INT,
@@ -46,8 +47,7 @@ CREATE
             sr_net_loss DECIMAL(
                 7,
                 2
-            ),
-            sr_returned_date_sk INT
+            )
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}${experiment_start_time}/${repetition}/store_returns/'

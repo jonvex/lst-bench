@@ -1,6 +1,7 @@
 CREATE
     TABLE
         ${catalog}.${database}.web_sales(
+            ws_sold_date_sk INT,
             ws_sold_time_sk INT,
             ws_ship_date_sk INT,
             ws_item_sk INT,
@@ -78,8 +79,7 @@ CREATE
             ws_net_profit DECIMAL(
                 7,
                 2
-            ),
-            ws_sold_date_sk INT
+            )
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}${experiment_start_time}/${repetition}/web_sales/'

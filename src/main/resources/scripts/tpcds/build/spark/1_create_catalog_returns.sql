@@ -1,6 +1,7 @@
 CREATE
     TABLE
         ${catalog}.${database}.catalog_returns(
+            cr_returned_date_sk INT,
             cr_returned_time_sk INT,
             cr_item_sk INT,
             cr_refunded_customer_sk INT,
@@ -53,8 +54,7 @@ CREATE
             cr_net_loss DECIMAL(
                 7,
                 2
-            ),
-            cr_returned_date_sk INT
+            )
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}${experiment_start_time}/${repetition}/catalog_returns/'

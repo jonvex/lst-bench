@@ -1,6 +1,7 @@
 CREATE
     TABLE
         ${catalog}.${database}.store_sales(
+            ss_sold_date_sk INT,
             ss_sold_time_sk INT,
             ss_item_sk INT,
             ss_customer_sk INT,
@@ -58,8 +59,7 @@ CREATE
             ss_net_profit DECIMAL(
                 7,
                 2
-            ),
-            ss_sold_date_sk INT
+            )
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}${experiment_start_time}/${repetition}/store_sales/'

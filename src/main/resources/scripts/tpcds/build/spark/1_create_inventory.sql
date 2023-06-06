@@ -1,10 +1,10 @@
 CREATE
     TABLE
         ${catalog}.${database}.inventory(
+            inv_date_sk INT,
             inv_item_sk INT,
             inv_warehouse_sk INT,
-            inv_quantity_on_hand INT,
-            inv_date_sk INT
+            inv_quantity_on_hand INT
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}${experiment_start_time}/${repetition}/inventory/'
