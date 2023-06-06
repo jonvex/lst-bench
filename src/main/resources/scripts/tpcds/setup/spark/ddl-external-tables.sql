@@ -573,7 +573,7 @@ CREATE
             c_birth_country string,
             c_login string,
             c_email_address string,
-            c_last_review_date string
+            c_last_review_date INT
         )
             USING ${external_table_format} OPTIONS(
             PATH = "${external_data_path}customer/" ${external_options_suffix}
