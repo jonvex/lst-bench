@@ -13,5 +13,5 @@ insert_file: 'src/main/resources/scripts/logging/spark/insert.sql'
 # The following parameter values will be used to replace the variables in the logging statements.
 parameter_values:
   data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/iceberg/sf_1/'
-  catalog: dev
+  catalog: spark_catalog
   database: iceberg_tpcds_telemetry

@@ -14,14 +14,14 @@ metadata:
   mode: mor
 # The following parameter values will be used to replace the variables in the workload statements.
 parameter_values:
-  external_catalog: dev
+  external_catalog: spark_catalog
   external_database: external_tpcds
   external_table_format: csv
   external_data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/tpcds_external/sf_1/'
   external_options_suffix: ',sep="|",header="false",emptyValue="",dateFormat="yyyy-MM-dd",timestampFormat="yyyy-MM-dd HH:mm:ss[.SSS]"'
   external_tblproperties_suffix: ''
-  catalog: dev
-  database: iceberg_tpcds
+  catalog: iceberg
+  database: sf_1
   table_format: iceberg
   data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/iceberg/sf_1/'
   options_suffix: ''

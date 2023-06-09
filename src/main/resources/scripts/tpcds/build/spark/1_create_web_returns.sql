@@ -54,7 +54,7 @@ CREATE
             )
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/web_returns/'
+            PATH '${data_path}web_returns/'
         ) PARTITIONED BY(wr_returned_date_sk) TBLPROPERTIES(
             'primaryKey' = 'wr_item_sk,wr_order_number' ${table_props_suffix}
         );
