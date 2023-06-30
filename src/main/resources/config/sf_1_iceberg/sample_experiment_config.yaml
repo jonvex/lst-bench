@@ -25,4 +25,4 @@ parameter_values:
   table_format: iceberg
   data_path: 's3a://rxusandbox-us-west-2/testcases/lstbench/iceberg/sf_1/'
   options_suffix: ''
-  table_props_suffix: ',"write.delete.mode"="copy-on-write","write.update.mode"="merge-on-read","write.merge.mode"="merge-on-read"'
+  table_props_suffix: ',"format-version"="2","write.delete.mode"="merge-on-read","write.update.mode"="merge-on-read","write.merge.mode"="merge-on-read"'
